@@ -225,7 +225,7 @@ domain_check() {
     read -rp "Please enter your domain name information (DNS):" domain
     domain_ip=$(ping "${domain}" -c 1 | sed '1{s/[^(]*(//;s/).*//;q}')
     echo -e "${OK} ${GreenBG} Obtaining public network ip information, please wait ${Font}"
-    local_ip=$(curl https://api-ipv4.ip.sb/ip)
+    local_ip=$(curl ifconfig.me)
     echo -e "Domain name dns resolve IP: ${domain_ip}"
     echo -e "Local IP: ${local_ip}"
     sleep 2
